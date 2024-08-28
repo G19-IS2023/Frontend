@@ -35,7 +35,7 @@ function BookDetails() {
   const fetchAndUpdatePagesRead = async () => {
     try {
       const { data: libraries } = await axios.get(
-        `http://localhost:5050/book/getLibraries/${userId}`
+        `https://backend-production-7b98.up.railway.app/book/getLibraries/${userId}`
       );
       let foundBook = false;
 
@@ -43,7 +43,7 @@ function BookDetails() {
       for (let library of libraries) {
         try {
           const res = await axios.get(
-            `http://localhost:5050/book/library/${library.libId}/getBook/${id}/id/${userId}`
+            `https://backend-production-7b98.up.railway.app/book/library/${library.libId}/getBook/${id}/id/${userId}`
           );
           if (res.status === 200 && res.data.pagesRead !== undefined) {
             setReadPages(res.data.pagesRead);
@@ -73,13 +73,13 @@ function BookDetails() {
         // Aggiungi il libro alla libreria e aggiorna subito le pagine lette
 
         console.log(`Adding book to library with ${readPages} pages read`);
-        await axios.post("http://localhost:5050/book/addBook", {
+        await axios.post("https://backend-production-7b98.up.railway.app/book/addBook", {
           bookId: id,
           libId: "1",
           userId: userId,
           pages: readPages, // Usa direttamente readPages invece di debouncedReadPages
         });
-        await axios.put("http://localhost:5050/book/modifyPages", {
+        await axios.put("https://backend-production-7b98.up.railway.app/book/modifyPages", {
           bookId: id,
           libId: "1",
           pages: readPages,
@@ -103,11 +103,11 @@ function BookDetails() {
   const updateReadPagesInLibraries = async () => {
     try {
       const { data: libraries } = await axios.get(
-        `http://localhost:5050/book/getLibraries/${userId}`
+        `https://backend-production-7b98.up.railway.app/book/getLibraries/${userId}`
       );
       for (let library of libraries) {
         try {
-          await axios.put("http://localhost:5050/book/modifyPages", {
+          await axios.put("https://backend-production-7b98.up.railway.app/book/modifyPages", {
             bookId: id,
             libId: library.libId,
             pages: debouncedReadPages,
