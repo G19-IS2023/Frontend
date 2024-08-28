@@ -1,0 +1,14 @@
+.button-drop{
+    color: #0c929e !important;
+}
+#dropdown-basic-button{
+    background-color: white;
+    color: #0c929e;
+    border: 0 !important;
+    border-bottom: 3px solid #0c929e !important;
+    border-radius: 0;
+}
+#dropdown-basic-button:hover{
+    background-color: #0c929e;
+    color: white;
+}

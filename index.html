@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./src/assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookXChange</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script type="text/javascript">
+      function refreshPage () {
+          var page_y = document.getElementsByTagName("body")[0].scrollTop;
+          window.location.href = window.location.href.split('?')[0] + '?page_y=' + page_y;
+      }
+      window.onload = function () {
+          if ( window.location.href.indexOf('page_y') != -1 ) {
+              var match = window.location.href.split('?')[1].split("&")[0].split("=");
+              document.getElementsByTagName("body")[0].scrollTop = match[1];
+          }
+      }
+    </script>
+  </body>
+</html>

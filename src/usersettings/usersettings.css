@@ -1,0 +1,49 @@
+.usbody{
+    margin-top: 120px;
+}
+.titolo-user{
+    font-weight: bold;
+    color: #0c929e;
+}
+.user-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profile_picture{
+    width: 14rem;
+  margin-bottom: 0.5rem;
+  margin-top: 2.5rem;
+  border: 4px solid #0c929e;
+  border-radius: 12.5rem;
+}
+.bottoni-user{
+    background-color: white;
+    color: #0c929e;
+    border: 0 !important;
+    border-bottom: 3px solid #0c929e !important;
+    border-radius: 0;
+    width: 170px;
+    margin-top: 1rem;
+}
+.bottone-user-delete{
+    background-color: white;
+    color: #bb0d0d;
+    border: 0 !important;
+    border-bottom: 3px solid #bb0d0d !important;
+    border-radius: 0;
+    width: 170px;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+.box-bottoni{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bottoni-user:hover{
+    background-color: #0c929e;
+    color: white;
+}

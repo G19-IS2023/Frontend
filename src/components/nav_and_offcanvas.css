@@ -1,0 +1,203 @@
+.navbar_sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+.navbarbox {
+  padding: 20px !important;
+  background-color: #e9f0f7;
+  height: 80px;
+  padding: 0px;
+  display: flex;
+  justify-content: center !important;
+}
+.riga{
+    width: auto ;
+}
+.left-col{
+    display: flex;
+    justify-content: right;
+}
+.right-col{
+    display: flex;
+    justify-content: left;
+}
+.ricerca {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 0.8px solid #abb5be;
+  background-color: white;
+  padding: 0px 10px 0px 10px;
+  border-radius: 30px;
+  flex: auto;
+  max-width: 100%;
+}
+.search_icon {
+  height: 20px;
+  width: 20px;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+.search_input {
+  border: none;
+  border-radius: 1.3rem;
+  height: 2.8rem;
+  flex: auto;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.logo_intero {
+  height: 3rem;
+}
+.menu_icon {
+  height: 3rem;
+  cursor: pointer;
+}
+.guest_img {
+  height: 37.6px;
+  margin-left: 1rem;
+}
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 !important;
+}
+.profile_picture_offcanvas {
+  width: 7rem;
+  margin-bottom: 0.5rem;
+  border: 4px solid #0c929e;
+  border-radius: 12.5rem;
+}
+.ppo_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nome {
+  color: #0c929e;
+  margin: 0;
+}
+.opzioni {
+  color: #bcc3ca;
+  margin-bottom: 0;
+}
+
+.box_opzioni2:hover ~ img {
+  content: url("/src/assets/logout_blu.png");
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+.box_opzioni {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+.box_opzioni2 {
+  overflow: hidden;
+  text-decoration: none;
+}
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0.7rem 0;
+}
+.preview img.icone {
+  height: 2rem;
+  margin-right: 1rem;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  content: url(/src/assets/logout_grigio.png);
+}
+.preview img.freccia {
+  height: 1rem;
+  margin-bottom: 5px;
+  margin-right: 1rem;
+  width: 1rem;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  content: url(/src/assets/arrow_grigio.png);
+}
+.riga {
+  width: 80%;
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #b5bcc4;
+}
+.preview:hover {
+  background-color: #15e0f3;
+}
+.preview:hover .opzioni {
+  color: #0c929e;
+}
+.preview:hover img.freccia {
+  content: url(/src/assets/arrow_blu.png);
+}
+.preview:hover img.icone {
+  content: url(/src/assets/logout_blu.png);
+}
+
+.activeb{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0.7rem 0;
+  background-color: #15e0f3;
+}
+.activeb img.icone{
+  height: 2rem;
+  margin-right: 1rem;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  content: url(/src/assets/logout_blu.png);
+}
+.activeb img.freccia{
+  height: 1rem;
+  margin-bottom: 5px;
+  margin-right: 1rem;
+  width: 1rem;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  content: url(/src/assets/arrow_blu.png);
+}
+.activeb h4.opzioni{
+  color: #0c929e;
+}
+.offcanvas-body {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0.2rem;
+}
+.opzione {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.offcanvas {
+  max-width: 20rem !important;
+}

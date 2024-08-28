@@ -1,0 +1,109 @@
+{
+  "hash": "06b3901f",
+  "configHash": "27adc9c0",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "af4d7560",
+  "optimized": {
+    "prop-types": {
+      "src": "../../node_modules/prop-types/index.js",
+      "file": "prop-types.js",
+      "fileHash": "c274998e",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "51a89946",
+      "needsInterop": true
+    },
+    "react-bootstrap": {
+      "src": "../../node_modules/react-bootstrap/esm/index.js",
+      "file": "react-bootstrap.js",
+      "fileHash": "75b9b286",
+      "needsInterop": false
+    },
+    "react-bootstrap/Button": {
+      "src": "../../node_modules/react-bootstrap/esm/Button.js",
+      "file": "react-bootstrap_Button.js",
+      "fileHash": "714b5cc6",
+      "needsInterop": false
+    },
+    "react-bootstrap/Col": {
+      "src": "../../node_modules/react-bootstrap/esm/Col.js",
+      "file": "react-bootstrap_Col.js",
+      "fileHash": "10471fd0",
+      "needsInterop": false
+    },
+    "react-bootstrap/Form": {
+      "src": "../../node_modules/react-bootstrap/esm/Form.js",
+      "file": "react-bootstrap_Form.js",
+      "fileHash": "7ee07dfc",
+      "needsInterop": false
+    },
+    "react-bootstrap/Navbar": {
+      "src": "../../node_modules/react-bootstrap/esm/Navbar.js",
+      "file": "react-bootstrap_Navbar.js",
+      "fileHash": "292fe7e8",
+      "needsInterop": false
+    },
+    "react-bootstrap/Offcanvas": {
+      "src": "../../node_modules/react-bootstrap/esm/Offcanvas.js",
+      "file": "react-bootstrap_Offcanvas.js",
+      "fileHash": "c9b7e211",
+      "needsInterop": false
+    },
+    "react-bootstrap/Row": {
+      "src": "../../node_modules/react-bootstrap/esm/Row.js",
+      "file": "react-bootstrap_Row.js",
+      "fileHash": "a9d30c2f",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "cc159f9e",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "6288b1d3",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-TK6OWN2Y": {
+      "file": "chunk-TK6OWN2Y.js"
+    },
+    "chunk-2W7MFY27": {
+      "file": "chunk-2W7MFY27.js"
+    },
+    "chunk-M2ZJDW3D": {
+      "file": "chunk-M2ZJDW3D.js"
+    },
+    "chunk-MALNRAGZ": {
+      "file": "chunk-MALNRAGZ.js"
+    },
+    "chunk-4ASWBRZ3": {
+      "file": "chunk-4ASWBRZ3.js"
+    },
+    "chunk-AY44NODA": {
+      "file": "chunk-AY44NODA.js"
+    },
+    "chunk-VDZPFIZJ": {
+      "file": "chunk-VDZPFIZJ.js"
+    },
+    "chunk-4BJW6OLS": {
+      "file": "chunk-4BJW6OLS.js"
+    },
+    "chunk-PMTCDWDV": {
+      "file": "chunk-PMTCDWDV.js"
+    },
+    "chunk-O6O4HUXW": {
+      "file": "chunk-O6O4HUXW.js"
+    },
+    "chunk-LQ2VYIYD": {
+      "file": "chunk-LQ2VYIYD.js"
+    }
+  }
+}

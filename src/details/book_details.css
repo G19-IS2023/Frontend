@@ -1,0 +1,64 @@
+.bd_title_container {
+  display: flex;
+  justify-content: center;
+  margin: 0 40px 20px 40px;
+}
+.bd_title {
+  width: fit-content;
+  color: #0c929e;
+  font-weight: bold;
+  text-align: center;
+}
+.book-details-2 {
+  margin: 120px 80px 80px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.book-details {
+  display: flex;
+  flex-direction: row;
+}
+.book-description-2 {
+  margin: 0 40px;
+}
+.progress-bar {
+  max-width: 900px;
+  flex: auto;
+}
+.progress_bar_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+.icon-pages {
+  width: 60px;
+}
+.input-pages {
+  text-align: center;
+  width: 100px;
+  max-width: 150px;
+  border: none;
+  font-size: 40px;
+  font-weight: bold;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+.add-pages {
+  display: flex;
+  align-items: center;
+}
+.text-pages {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.pages {
+  display: flex;
+  margin: 25px;
+}

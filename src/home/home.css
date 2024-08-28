@@ -1,0 +1,43 @@
+body{
+    font-family: "Quicksand", sans-serif;
+}
+.img_container{
+    width:max-content;
+    display: flex;
+    justify-content: center;
+}
+.book_of_the_day_container{
+    background-color: #0c929e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    padding-top: 50px;
+    margin-top: 80px;
+    color: white;
+}
+.copertina{
+    height: 400px;
+}
+.copertina:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: scale(1.1);
+  }
+.book_of_the_day_container_2{
+    display: flex;
+    justify-content: space-around;
+    margin: 40px;
+    margin-bottom: 30px;
+}
+.book_of_the_day_container_3{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+.aggiunti_recente_box{
+    margin-top: 50px;
+}
+.titolo_bod{
+    color: white !important;
+    font-weight: bold;
+}
