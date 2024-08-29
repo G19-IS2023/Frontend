@@ -23,7 +23,7 @@ body{
 }
 .titolo:hover img.more_icon{
     height: 1.6rem;
-    content: url(/src/assets/arrow_blu_destra.png);
+    content: url(/assets/arrow_blu_destra.png);
 }
 .titolo:hover h1.puntini{
     display: contents;

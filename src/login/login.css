@@ -1,5 +1,5 @@
 .sfondo {
-    background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url(/src/assets/sfondox2.png);
+    background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url(/assets/sfondox2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

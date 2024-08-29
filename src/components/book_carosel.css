@@ -32,7 +32,7 @@ body{
 }
 .more_icon{
     height: 2rem;
-    content: url(/src/assets/icona_more.png);
+    content: url(/assets/icona_more.png);
 }
 .cards_container{
     display: flex;
@@ -61,7 +61,7 @@ body{
 }
 .titolo_carousel_container:hover img.more_icon{
     height: 1.6rem;
-    content: url(/src/assets/arrow_blu_destra.png);
+    content: url(/assets/arrow_blu_destra.png);
 }
 .titolo_carousel_container:hover h1.puntini{
     display: contents;
