@@ -107,7 +107,7 @@ function NavbarAndOffcanvas() {
             <div>
               <div className="ppo_container">
                 <img
-                  src='/src/assets/guest.png'
+                  src='/assets/guest.png'
                   className="profile_picture_offcanvas"
                   alt="Profile"
                 />
@@ -181,7 +181,7 @@ function NavbarAndOffcanvas() {
             <Col md={2} className="left-col">
               <div className="img_container">
                 <img
-                  src="/src/assets/guest.png"
+                  src="/assets/guest.png"
                   className="menu_icon"
                   onClick={handleShow}
                   alt="Menu"
@@ -201,7 +201,7 @@ function NavbarAndOffcanvas() {
                 </form>
                 <div>
                   <img
-                    src="/src/assets/icona_ricerca.png"
+                    src="/assets/icona_ricerca.png"
                     className="search_icon"
                     alt="Search"
                     onClick={handleSearch}
@@ -212,7 +212,7 @@ function NavbarAndOffcanvas() {
             <Col md={2} className="right-col">
               <Link to="/home">
                 <img
-                  src="/src/assets/logo_intero.png"
+                  src="/assets/logo_intero.png"
                   className="logo_intero"
                   alt="Logo"
                 />

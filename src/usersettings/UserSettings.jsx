@@ -162,7 +162,7 @@ function UserSettings() {
           <div className="user-details">
             <h1 className="titolo-user">User Settings</h1>
             <img
-              src="/src/assets/guest.png"
+              src="/assets/guest.png"
               className="profile_picture"
               alt="Profile"
             />

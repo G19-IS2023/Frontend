@@ -217,7 +217,7 @@ function BookDetails() {
       <div className="progress_bar_container">
         <div className="add-pages">
           <img
-            src="/src/assets/remove.png"
+            src="/assets/remove.png"
             className="icon-pages"
             onMouseDown={startDecrement}
             onMouseUp={stopDecrement}
@@ -237,7 +237,7 @@ function BookDetails() {
             className="input-pages"
           />
           <img
-            src="/src/assets/add.png"
+            src="/assets/add.png"
             className="icon-pages"
             onMouseDown={startIncrement}
             onMouseUp={stopIncrement}
