@@ -92,7 +92,7 @@ input:focus {
 }
 
 .box_opzioni2:hover ~ img {
-  content: url("/src/assets/logout_blu.png");
+  content: url("/assets/logout_blu.png");
   height: 2.5rem;
   margin-right: 1rem;
 }
@@ -122,7 +122,7 @@ input:focus {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  content: url(/src/assets/logout_grigio.png);
+  content: url(/assets/logout_grigio.png);
 }
 .preview img.freccia {
   height: 1rem;
@@ -134,7 +134,7 @@ input:focus {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  content: url(/src/assets/arrow_grigio.png);
+  content: url(/assets/arrow_grigio.png);
 }
 .riga {
   width: 80%;
@@ -149,10 +149,10 @@ input:focus {
   color: #0c929e;
 }
 .preview:hover img.freccia {
-  content: url(/src/assets/arrow_blu.png);
+  content: url(/assets/arrow_blu.png);
 }
 .preview:hover img.icone {
-  content: url(/src/assets/logout_blu.png);
+  content: url(/assets/logout_blu.png);
 }
 
 .activeb{
@@ -171,7 +171,7 @@ input:focus {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  content: url(/src/assets/logout_blu.png);
+  content: url(/assets/logout_blu.png);
 }
 .activeb img.freccia{
   height: 1rem;
@@ -183,7 +183,7 @@ input:focus {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  content: url(/src/assets/arrow_blu.png);
+  content: url(/assets/arrow_blu.png);
 }
 .activeb h4.opzioni{
   color: #0c929e;
