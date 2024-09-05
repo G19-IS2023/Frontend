@@ -13,6 +13,7 @@ function UserSettings() {
   const [username, setUsername] = useState("");
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
+  const [confNewPassword, setConfNewPassword] = useState("");
   const [user, setUser] = useState({
     name: "Guest",
     email: "guest@example.com",
@@ -130,27 +131,37 @@ function UserSettings() {
   };
 
   const handlePasswordSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const token = sessionStorage.getItem("token");
-      const userId = sessionStorage.getItem("userId");
-      await axios.put(
-        `${import.meta.env.VITE_URL}/user/modifyPassword`,
-        {
-          userId: userId,
-          oldPassword: oldPassword,
-          newPassword: newPassword,
-        },
-        {
-          headers: {
-            Authorization: `${token}`,
+    if (newPassword == confNewPassword) {
+      e.preventDefault();
+      try {
+        const token = sessionStorage.getItem("token");
+        const userId = sessionStorage.getItem("userId");
+        await axios.put(
+          `${import.meta.env.VITE_URL}/user/modifyPassword`,
+          {
+            userId: userId,
+            oldPassword: oldPassword,
+            newPassword: newPassword,
           },
+          {
+            headers: {
+              Authorization: `${token}`,
+            },
+          }
+        );
+        setShow(false);
+        window.location.reload();
+      } catch (error) {
+        if ((error = 406)) {
+          alert(
+            "Password must contain a number, a letter and a special character (? ! . _ - @ |). The password must be at least 8 character long."
+          );
+        } else {
+          alert("Error updating the password");
         }
-      );
-      setShow(false);
-      window.location.reload();
-    } catch (error) {
-      console.error("Failed to update password:", error);
+      }
+    } else {
+      alert("Passwords don't match");
     }
   };
 
@@ -235,7 +246,7 @@ function UserSettings() {
             ) : (
               <>
                 <Form.Group>
-                  <Form.Label>Vecchia Password</Form.Label>
+                  <Form.Label>Old Password</Form.Label>
                   <Form.Control
                     type="password"
                     value={oldPassword}
@@ -244,11 +255,20 @@ function UserSettings() {
                   />
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label>Nuova Password</Form.Label>
+                  <Form.Label>New Password</Form.Label>
                   <Form.Control
                     type="password"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Repeat new Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    value={confNewPassword}
+                    onChange={(e) => setConfNewPassword(e.target.value)}
                     required
                   />
                 </Form.Group>
