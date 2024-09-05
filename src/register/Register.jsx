@@ -55,7 +55,12 @@ function Register() {
             }
         } catch (error) {
             console.error('Registration error:', error);
-            alert('Registration failed. Please check the details and try again.');
+            if(error = 406){
+                alert('Password must contain a number, a letter and a special character (? ! . _ - @ |). The password must be at least 8 character long.');
+            }else{
+               alert('Registration failed. Please check the details and try again.'); 
+            }
+            
         }
     };
 
