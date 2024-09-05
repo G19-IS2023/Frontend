@@ -45,7 +45,7 @@ function Register() {
         };
 
         try {
-            const response = await axios.post(`https://backend-production-7b98.up.railway.app/user/register`, userData);
+            const response = await axios.post(`${import.meta.env.VITE_URL}/user/register`, userData);
             if (response.status === 201) {
                 alert('Registration successful! You can now log in.');
                 window.location.href = './'; // Assicurarsi che il percorso sia corretto
