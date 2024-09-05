@@ -7,8 +7,6 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './register.css';
-import dotenv from 'dotenv';
-dotenv.config();
 
 function Register() {
     const [name, setName] = useState('');
@@ -47,7 +45,7 @@ function Register() {
         };
 
         try {
-            const response = await axios.post(`${process.env.URL}/user/register`, userData);
+            const response = await axios.post(`https://backend-production-7b98.up.railway.app/user/register`, userData);
             if (response.status === 201) {
                 alert('Registration successful! You can now log in.');
                 window.location.href = './'; // Assicurarsi che il percorso sia corretto

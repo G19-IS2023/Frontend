@@ -1,14 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './login.css';
-import axios from 'axios';
-import dotenv from 'dotenv';
-dotenv.config()
+import './login.css'
+import axios from 'axios'
 
 function LogIn() {
 
@@ -27,7 +25,7 @@ function LogIn() {
     const password = form.formBasicPassword.value;
 
     try {
-      const response = await axios.post(`${process.env.URL}/user/login`, { email, password });
+      const response = await axios.post('https://backend-production-7b98.up.railway.app/user/login', { email, password });
       if (response.status === 200) {
         const userId = response.data.userId;
         const accessToken = response.headers['authorization'];

@@ -5,8 +5,6 @@ import Form from "react-bootstrap/Form";
 import axios from "axios";
 import "./usersettings.css";
 import { Row, Col } from "react-bootstrap";
-import dotenv from "dotenv";
-dotenv.config();
 
 function UserSettings() {
   const [show, setShow] = useState(false);
@@ -26,7 +24,7 @@ function UserSettings() {
       if (userId) {
         try {
           const response = await fetch(
-            `${process.env.URL}/user/getUser/${userId}`
+            `https://backend-production-7b98.up.railway.app/user/getUser/${userId}`
           );
           if (response.ok) {
             const data = await response.json();
@@ -91,7 +89,7 @@ function UserSettings() {
       const token = sessionStorage.getItem("token");
       const userId = sessionStorage.getItem("userId");
       await axios.delete(
-        `${process.env.URL}/user/deleteProfile/${userId}`,
+        `https://backend-production-7b98.up.railway.app/user/deleteProfile/${userId}`,
         {
           headers: {
             Authorization: `${token}`,
@@ -113,7 +111,7 @@ function UserSettings() {
       const token = sessionStorage.getItem("token");
       const userId = sessionStorage.getItem("userId");
       await axios.put(
-        `${process.env.URL}/user/modifyUsername`,
+        "https://backend-production-7b98.up.railway.app/user/modifyUsername",
         {
           userId: userId,
           newUsername: username,
@@ -137,7 +135,7 @@ function UserSettings() {
       const token = sessionStorage.getItem("token");
       const userId = sessionStorage.getItem("userId");
       await axios.put(
-        `${process.env.URL}/user/modifyPassword`,
+        "https://backend-production-7b98.up.railway.app/user/modifyPassword",
         {
           userId: userId,
           oldPassword: oldPassword,
