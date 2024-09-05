@@ -225,7 +225,7 @@ function UserSettings() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modifica {field}</Modal.Title>
+          <Modal.Title>Modify {field}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form
@@ -235,7 +235,7 @@ function UserSettings() {
           >
             {field === "username" ? (
               <Form.Group>
-                <Form.Label>Nuovo Username</Form.Label>
+                <Form.Label>New Username</Form.Label>
                 <Form.Control
                   type="text"
                   value={username}
@@ -283,18 +283,18 @@ function UserSettings() {
 
       <Modal show={showDelete} onHide={handleDeleteClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Conferma Eliminazione Account</Modal.Title>
+          <Modal.Title>Confirm Account Deletion</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Sei sicuro di voler eliminare il tuo account? Questa azione è
-          irreversibile.
+          Are you sure you want to delete your account? This action is
+          irreversible.
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleDeleteClose}>
-            Annulla
+            Cancel
           </Button>
           <Button variant="danger" onClick={handleDeleteAccount}>
-            Elimina Account
+            Delete Account
           </Button>
         </Modal.Footer>
       </Modal>
