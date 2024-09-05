@@ -7,6 +7,8 @@ import { Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './nav_and_offcanvas.css';
 import { useNavigate } from "react-router-dom";
+import dotenv from 'dotenv';
+dotenv.config();
 
 function NavbarAndOffcanvas() {
   const [show, setShow] = useState(false);
@@ -25,7 +27,7 @@ function NavbarAndOffcanvas() {
     const fetchUserData = async () => {
       if (userId) {
         try {
-          const response = await fetch(`https://backend-production-7b98.up.railway.app/user/getUser/${userId}`);
+          const response = await fetch(`${process.env.URL}/user/getUser/${userId}`);
           if (response.ok) {
             const data = await response.json();
             setUser({

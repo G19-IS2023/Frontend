@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import "./librarydropdown.css";
+import dotenv from "dotenv";
+dotenv.config();
 
 const LibraryDropdown = ({ bookId, isInLib }) => {
   const [libraries, setLibraries] = useState([]);
@@ -25,7 +27,7 @@ const LibraryDropdown = ({ bookId, isInLib }) => {
     }
 
     // Recupera le librerie dell'utente loggato
-    fetch(`https://backend-production-7b98.up.railway.app/book/getLibraries/${userId}`)
+    fetch(`${process.env.URL}/book/getLibraries/${userId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch libraries");
@@ -47,7 +49,7 @@ const LibraryDropdown = ({ bookId, isInLib }) => {
         return Promise.all(
           libraries.map((library) =>
             fetch(
-              `https://backend-production-7b98.up.railway.app/book/library/${library.libId}/id/${userId}/getBook/${bookId}`
+              `${process.env.URL}/book/library/${library.libId}/id/${userId}/getBook/${bookId}`
             )
               .then((res) => {
                 // Check the content type of the response
@@ -85,8 +87,8 @@ const LibraryDropdown = ({ bookId, isInLib }) => {
   const handleLibraryClick = (libraryId) => {
     const isBookInLibrary = bookInLibraries[libraryId];
     const url = isBookInLibrary
-      ? `https://backend-production-7b98.up.railway.app/book/library/${libraryId}/deleteBook/${bookId}/id/${userId}`
-      : `https://backend-production-7b98.up.railway.app/book/addBook`;
+      ? `${process.env.URL}/book/library/${libraryId}/deleteBook/${bookId}/id/${userId}`
+      : `${process.env.URL}/book/addBook`;
     const method = isBookInLibrary ? "DELETE" : "POST";
     const data = !isBookInLibrary
       ? { bookId: bookId, libId: libraryId, userId: userId }
