@@ -47,7 +47,7 @@ function Register() {
 
         try {
             console.log(import.meta.env.VITE_url);
-            const response = await axios.post(import.meta.env.VITE_url + "/user/register", userData);
+            const response = await axios.post(`${import.meta.env.VITE_url} + /user/register`, userData);
             if (response.status === 201) {
                 alert('Registration successful! You can now log in.');
                 window.location.href = './'; // Assicurarsi che il percorso sia corretto
