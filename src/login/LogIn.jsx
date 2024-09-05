@@ -25,7 +25,7 @@ function LogIn() {
     const password = form.formBasicPassword.value;
 
     try {
-      const response = await axios.post('https://backend-production-7b98.up.railway.app/user/login', { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_URL}/user/login`, { email, password });
       if (response.status === 200) {
         const userId = response.data.userId;
         const accessToken = response.headers['authorization'];

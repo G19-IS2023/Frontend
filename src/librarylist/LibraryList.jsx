@@ -35,7 +35,7 @@ const LibraryList = () => {
       return;
     }
     const userId = sessionStorage.getItem("userId");
-    const response = await fetch(`https://backend-production-7b98.up.railway.app/book/deleteLibrary/${selectedLibraryId}/id/${userId}`, {
+    const response = await fetch(`${import.meta.env.VITE_URL}/book/deleteLibrary/${selectedLibraryId}/id/${userId}`, {
       method: 'DELETE'
     });
     if (response.ok) {
@@ -54,7 +54,7 @@ const LibraryList = () => {
   useEffect(() => {
     const userId = sessionStorage.getItem("userId");
 
-    fetch(`https://backend-production-7b98.up.railway.app/book/getLibraries/${userId}`)
+    fetch(`${import.meta.env.VITE_URL}/book/getLibraries/${userId}`)
       .then((response) => response.json())
       .then((data) => {
         const libs = data;
@@ -114,7 +114,7 @@ const LibraryList = () => {
     const userId = sessionStorage.getItem("userId");
     const newLibId = `lib-${Date.now()}`; // Generate a unique ID for the library
     try {
-      const response = await fetch('https://backend-production-7b98.up.railway.app/book/createLibrary', {
+      const response = await fetch(`${import.meta.env.VITE_URL}/book/createLibrary`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

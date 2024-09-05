@@ -24,7 +24,7 @@ function UserSettings() {
       if (userId) {
         try {
           const response = await fetch(
-            `https://backend-production-7b98.up.railway.app/user/getUser/${userId}`
+            `${import.meta.env.VITE_URL}/user/getUser/${userId}`
           );
           if (response.ok) {
             const data = await response.json();
@@ -89,7 +89,7 @@ function UserSettings() {
       const token = sessionStorage.getItem("token");
       const userId = sessionStorage.getItem("userId");
       await axios.delete(
-        `https://backend-production-7b98.up.railway.app/user/deleteProfile/${userId}`,
+        `${import.meta.env.VITE_URL}/user/deleteProfile/${userId}`,
         {
           headers: {
             Authorization: `${token}`,
@@ -111,7 +111,7 @@ function UserSettings() {
       const token = sessionStorage.getItem("token");
       const userId = sessionStorage.getItem("userId");
       await axios.put(
-        "https://backend-production-7b98.up.railway.app/user/modifyUsername",
+        `${import.meta.env.VITE_URL}/user/modifyUsername`,
         {
           userId: userId,
           newUsername: username,
@@ -135,7 +135,7 @@ function UserSettings() {
       const token = sessionStorage.getItem("token");
       const userId = sessionStorage.getItem("userId");
       await axios.put(
-        "https://backend-production-7b98.up.railway.app/user/modifyPassword",
+        `${import.meta.env.VITE_URL}/user/modifyPassword`,
         {
           userId: userId,
           oldPassword: oldPassword,

@@ -25,7 +25,7 @@ function NavbarAndOffcanvas() {
     const fetchUserData = async () => {
       if (userId) {
         try {
-          const response = await fetch(`https://backend-production-7b98.up.railway.app/user/getUser/${userId}`);
+          const response = await fetch(`${import.meta.env.VITE_URL}/user/getUser/${userId}`);
           if (response.ok) {
             const data = await response.json();
             setUser({
