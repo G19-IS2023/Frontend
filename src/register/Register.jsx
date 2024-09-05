@@ -44,7 +44,9 @@ function Register() {
             password: password
         };
 
+
         try {
+            console.log(import.meta.env.VITE_URL);
             const response = await axios.post(import.meta.env.VITE_URL + "/user/register", userData);
             if (response.status === 201) {
                 alert('Registration successful! You can now log in.');
