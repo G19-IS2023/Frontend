@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { Row, Col, Pagination } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
-import BookCard from '../components/BookCard';
+import { useState } from "react";
+import { Row, Col, Pagination } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
+import BookCard from "../components/BookCard";
 import "./fullpage.css";
 
 function FullPage() {
   const location = useLocation();
-  const { books, title } = location.state || { books: [], title: '' };
+  const { books, title } = location.state || { books: [], title: "" };
   const [currentPage, setCurrentPage] = useState(1);
   const booksPerPage = 30;
   const totalPages = Math.ceil(books.length / booksPerPage);
@@ -23,20 +23,19 @@ function FullPage() {
 
   return (
     <>
-      <Row className='container_titolo_fullpage'>
-      <h1 className='titolo_fullpage'>{title}</h1>
+      <Row className="container_titolo_fullpage">
+        <h1 className="titolo_fullpage">{title}</h1>
       </Row>
-      <Row className='row_books'>
-      <Col sm={2}/>
-      <Col sm={8}>
-      <div className='book_container'>
-      {currentBooks.map((book) => (
-          <BookCard key={book.id} book={book}/>
-        ))}
-        </div>
+      <Row className="row_books">
+        <Col sm={2} />
+        <Col sm={8}>
+          <div className="book_container">
+            {currentBooks.map((book) => (
+              <BookCard key={book.id} book={book} />
+            ))}
+          </div>
         </Col>
-      <Col sm={2}/>
-        
+        <Col sm={2} />
       </Row>
       <Row className="mt-3">
         <Col className="text-center">

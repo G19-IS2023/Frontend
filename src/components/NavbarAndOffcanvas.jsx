@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Link } from 'react-router-dom';
-import { Col, Row } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './nav_and_offcanvas.css';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link } from "react-router-dom";
+import { Col, Row } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./nav_and_offcanvas.css";
 import { useNavigate } from "react-router-dom";
 
 function NavbarAndOffcanvas() {
   const [show, setShow] = useState(false);
   const [user, setUser] = useState({
-    name: 'Guest',
-    email: 'guest@example.com',
+    name: "Guest",
+    email: "guest@example.com",
   });
-  const [userId, setUserId] = useState(sessionStorage.getItem('userId'));
-  const [search, setSearch] = useState('');
+  const [userId, setUserId] = useState(sessionStorage.getItem("userId"));
+  const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
@@ -25,32 +25,39 @@ function NavbarAndOffcanvas() {
     const fetchUserData = async () => {
       if (userId) {
         try {
-          const response = await fetch(`${import.meta.env.VITE_URL}/user/getUser/${userId}`);
+          const response = await fetch(
+            `${import.meta.env.VITE_URL}/user/getUser/${userId}`
+          );
           if (response.ok) {
             const data = await response.json();
             setUser({
               name: data.name,
-              email: data.email
+              email: data.email,
             });
           } else {
-            console.error('User not found, setting default guest values.');
+            console.error("User not found, setting default guest values.");
             setUser({
-              name: 'Guest',
-              email: 'guest@example.com'
+              name: "Guest",
+              email: "guest@example.com",
             });
           }
         } catch (error) {
-          console.error('Cannot complete the task, setting default guest values.', error);
+          console.error(
+            "Cannot complete the task, setting default guest values.",
+            error
+          );
           setUser({
-            name: 'Guest',
-            email: 'guest@example.com'
+            name: "Guest",
+            email: "guest@example.com",
           });
         }
       } else {
-        console.error('No userId found in sessionStorage, setting default guest values.');
+        console.error(
+          "No userId found in sessionStorage, setting default guest values."
+        );
         setUser({
-          name: 'Guest',
-          email: 'guest@example.com'
+          name: "Guest",
+          email: "guest@example.com",
         });
       }
     };
@@ -58,44 +65,55 @@ function NavbarAndOffcanvas() {
     fetchUserData();
 
     const handleStorageChange = (event) => {
-      if (event.key === 'userId') {
-        setUserId(event.newValue);  // Aggiorna userId se cambia nel local storage
+      if (event.key === "userId") {
+        setUserId(event.newValue); // Aggiorna userId se cambia nel local storage
       }
     };
 
-    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener("storage", handleStorageChange);
 
     return () => {
-      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener("storage", handleStorageChange);
     };
-  }, [userId]);  // Riesegui l'effect quando userId cambia
+  }, [userId]); // Riesegui l'effect quando userId cambia
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
 
   const handleSearch = async (e) => {
-    if(search!=''){
-    e.preventDefault();  // Prevenire il comportamento predefinito del form
-    try {
-      const res = await axios.get(`https://example-data.draftbit.com/books?q=${search}`);
-      const books = res.data;
-      navigate(`/books/full/${search}`, {
-        state: {
-          books,
-          title: `Results for: '${search}'`,
-        },
-      });
-    } catch (err) {
-      console.error(err);
+    if (search != "") {
+      e.preventDefault(); // Prevenire il comportamento predefinito del form
+      try {
+        const res = await axios.get(
+          `https://example-data.draftbit.com/books?q=${search}`
+        );
+        const books = res.data;
+        if (books.lenght > 0) {
+          navigate(`/books/full/${search}`, {
+            state: {
+              books,
+              title: `Results for: '${search}'`,
+            },
+          });
+        } else {
+          navigate(`/books/full/${search}`, {
+            state: {
+              books,
+              title: `No results found for: '${search}'`,
+            },
+          });
+        }
+      } catch (err) {
+        console.error(err);
+      }
+      setSearch("");
     }
-    setSearch('');
-  }
   };
 
   const handleLogout = () => {
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('userId');
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("userId");
   };
 
   return (
@@ -107,7 +125,7 @@ function NavbarAndOffcanvas() {
             <div>
               <div className="ppo_container">
                 <img
-                  src='/assets/guest.png'
+                  src="/assets/guest.png"
                   className="profile_picture_offcanvas"
                   alt="Profile"
                 />
@@ -119,7 +137,11 @@ function NavbarAndOffcanvas() {
                   <div className="opzione">
                     <hr className="riga" />
                   </div>
-                  <div className={location.pathname === '/home' ? 'activeb ' : 'preview'}>
+                  <div
+                    className={
+                      location.pathname === "/home" ? "activeb " : "preview"
+                    }
+                  >
                     <div className="box_opzioni">
                       <img className="icone" alt="icon" />
                       <h4 className="opzioni">Home</h4>
@@ -129,11 +151,17 @@ function NavbarAndOffcanvas() {
                 </Link>
               </div>
               <div>
-                <Link className="box_opzioni2" to="/userLibrary" >
+                <Link className="box_opzioni2" to="/userLibrary">
                   <div className="opzione">
                     <hr className="riga" />
                   </div>
-                  <div className={location.pathname === '/userLibrary' ? 'activeb ' : 'preview'}>
+                  <div
+                    className={
+                      location.pathname === "/userLibrary"
+                        ? "activeb "
+                        : "preview"
+                    }
+                  >
                     <div className="box_opzioni">
                       <img className="icone" alt="icon" />
                       <h4 className="opzioni">My Library</h4>
@@ -142,13 +170,19 @@ function NavbarAndOffcanvas() {
                   </div>
                 </Link>
               </div>
-              
+
               <div>
                 <Link className="box_opzioni2" to="/userSettings" user={user}>
                   <div className="opzione">
                     <hr className="riga" />
                   </div>
-                  <div className={location.pathname === '/userSettings' ? 'activeb ' : 'preview'}>
+                  <div
+                    className={
+                      location.pathname === "/userSettings"
+                        ? "activeb "
+                        : "preview"
+                    }
+                  >
                     <div className="box_opzioni">
                       <img className="icone" alt="icon" />
                       <h4 className="opzioni">User settings</h4>
