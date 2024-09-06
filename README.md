@@ -1,6 +1,6 @@
 # XBooks
 
-Questa repository contiene il FrontEnd di **XBooks**. 
+Questa repository contiene il **FrontEnd** di XBooks. 
 
 # Come avviare il progetto
 
