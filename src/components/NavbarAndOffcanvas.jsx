@@ -89,7 +89,9 @@ function NavbarAndOffcanvas() {
           `https://example-data.draftbit.com/books?q=${search}`
         );
         const books = res.data;
-        if (books.lenght > 0) {
+        console.log(books.length);
+        console.log(books);
+        if (books.length > 0) {
           navigate(`/books/full/${search}`, {
             state: {
               books,
